@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HelloWorldScreen from 'screens/HelloWorld';
 import DatabaseScreen from 'screens/Tests/Database';
 import GridScreen from 'screens/Tests/Grid';
+import ComponentsScreen from 'screens/Tests/Components';
 
 const Stack = createNativeStackNavigator<App.Navigation.ParamList>();
 const StackNavigator = Stack.Navigator;
@@ -13,10 +14,13 @@ const StackScreen = Stack.Screen;
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <StackNavigator initialRouteName="APP.HOME">
+      <StackNavigator
+        initialRouteName="APP.HOME"
+        screenOptions={{headerShown: false}}>
         <StackScreen name="APP.HOME" component={HelloWorldScreen} />
         <StackScreen name="TESTS.DATABASE" component={DatabaseScreen} />
         <StackScreen name="TESTS.GRID" component={GridScreen} />
+        <StackScreen name="TESTS.COMPONENTS" component={ComponentsScreen} />
       </StackNavigator>
     </NavigationContainer>
   );

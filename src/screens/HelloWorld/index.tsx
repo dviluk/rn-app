@@ -67,12 +67,8 @@ const HelloWorldScreen = (props: Props) => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  function goToDatabase() {
-    navigation.push('TESTS.DATABASE');
-  }
-
-  function goToGrid() {
-    navigation.push('TESTS.GRID');
+  function goTo(screen: keyof App.Navigation.ParamList) {
+    return () => navigation.push(screen);
   }
 
   return (
@@ -82,8 +78,9 @@ const HelloWorldScreen = (props: Props) => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <Button onPress={goToDatabase} title="Database" />
-        <Button onPress={goToGrid} title="Grid" />
+        <Button onPress={goTo('TESTS.DATABASE')} title="Database" />
+        <Button onPress={goTo('TESTS.GRID')} title="Grid" />
+        <Button onPress={goTo('TESTS.COMPONENTS')} title="Components" />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
