@@ -5,6 +5,7 @@ declare namespace App {
       'TESTS.DATABASE': undefined;
       'TESTS.GRID': undefined;
       'TESTS.COMPONENTS': undefined;
+      'TESTS.FORM': undefined;
     };
   }
 }
