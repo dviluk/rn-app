@@ -3,6 +3,7 @@ declare namespace App {
     type ParamList = {
       'APP.HOME': undefined;
       'TESTS.DATABASE': undefined;
+      'TESTS.GRID': undefined;
     };
   }
 }

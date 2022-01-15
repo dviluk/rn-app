@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HelloWorldScreen from 'screens/HelloWorld';
 import DatabaseScreen from 'screens/Tests/Database';
+import GridScreen from 'screens/Tests/Grid';
 
 const Stack = createNativeStackNavigator<App.Navigation.ParamList>();
 const StackNavigator = Stack.Navigator;
@@ -15,6 +16,7 @@ export default function Navigation() {
       <StackNavigator initialRouteName="APP.HOME">
         <StackScreen name="APP.HOME" component={HelloWorldScreen} />
         <StackScreen name="TESTS.DATABASE" component={DatabaseScreen} />
+        <StackScreen name="TESTS.GRID" component={GridScreen} />
       </StackNavigator>
     </NavigationContainer>
   );

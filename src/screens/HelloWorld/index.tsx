@@ -71,6 +71,10 @@ const HelloWorldScreen = (props: Props) => {
     navigation.push('TESTS.DATABASE');
   }
 
+  function goToGrid() {
+    navigation.push('TESTS.GRID');
+  }
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -78,7 +82,8 @@ const HelloWorldScreen = (props: Props) => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <Button onPress={goToDatabase} title="Hello" />
+        <Button onPress={goToDatabase} title="Database" />
+        <Button onPress={goToGrid} title="Grid" />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
