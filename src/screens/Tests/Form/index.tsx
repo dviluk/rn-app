@@ -1,56 +1,33 @@
 import React from 'react';
-import {Button, Input} from '@ui-kitten/components';
-import Form from 'components/form';
-import {FormContext} from 'components/form/context';
+import {Button, Input, Text} from '@ui-kitten/components';
 import Screen from 'components/screen';
 
-import * as yup from 'yup';
-
-interface IForm {
-  name: string;
-}
-
-const resolver = yup.object({
-  name: yup.string().required(),
-});
-type IFormm = string;
+import FormItem from 'components/FormItem';
+import Forms, {useSuperForm} from 'services/forms';
+import {App} from '@app';
 
 export default function FormScreen() {
-  function onSubmit(data: any) {
+  const form = useSuperForm(Forms.Test.resolver);
+
+  function onSubmit(data: App.Forms.Test) {
     console.log(data);
   }
 
   return (
     <Screen title="Form">
-      <Form<IForm> resolver={resolver}>
-        <FormContext.Consumer>
-          {form => {
-            return (
-              <>
-                <Form.Item
-                  name="name"
-                  caption="Caption"
-                  label="name"
-                  placeholder="Name here"
-                  rules={{
-                    required: true,
-                  }}
-                  render={inputProps => {
-                    return (
-                      <Input
-                        {...inputProps}
-                        onChangeText={inputProps.onChange}
-                        onChange={undefined}
-                      />
-                    );
-                  }}
-                />
-                <Button onPress={form.handleSubmit(onSubmit)}>Submit</Button>
-              </>
-            );
-          }}
-        </FormContext.Consumer>
-      </Form>
+      <FormItem
+        form={form}
+        name="name"
+        caption="Caption"
+        label="name"
+        placeholder="Name here"
+        component={Input}
+        onChangeKey="onChangeText"
+      />
+      {form.formState.isSubmitted && !form.formState.isValid && (
+        <Text status="danger">Invalid</Text>
+      )}
+      <Button onPress={form.handleSubmit(onSubmit)}>Submit</Button>
     </Screen>
   );
 }

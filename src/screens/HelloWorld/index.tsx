@@ -57,7 +57,7 @@ const Section: React.FC<{
   );
 };
 
-type Props = NativeStackScreenProps<App.Navigation.ParamList, 'APP.HOME'>;
+type Props = NativeStackScreenProps<Navigation.ParamList, 'APP.HOME'>;
 const HelloWorldScreen = (props: Props) => {
   const {navigation} = props;
 
@@ -67,7 +67,7 @@ const HelloWorldScreen = (props: Props) => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  function goTo(screen: keyof App.Navigation.ParamList) {
+  function goTo(screen: keyof Navigation.ParamList) {
     return () => navigation.push(screen);
   }
 
