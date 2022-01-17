@@ -8,7 +8,7 @@ import GridScreen from 'screens/Tests/Grid';
 import ComponentsScreen from 'screens/Tests/Components';
 import FormScreen from 'screens/Tests/Form';
 
-const Stack = createNativeStackNavigator<App.Navigation.ParamList>();
+const Stack = createNativeStackNavigator<Navigation.ParamList>();
 const StackNavigator = Stack.Navigator;
 const StackScreen = Stack.Screen;
 
