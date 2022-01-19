@@ -19,7 +19,7 @@
     "@ui-kitten/eva-icons": "^5.1.1",
     "react": "17.0.2",
     "react-hook-form": "^7.24.0",
-    "react-native": "0.67.0-rc.6",
+    "react-native": "0.67.0",
     "react-native-rectangle-scanner": "^1.0.10",
     "react-native-responsive-grid-system": "^1.0.4",
     "react-native-safe-area-context": "^3.3.2",
