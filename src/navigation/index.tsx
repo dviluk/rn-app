@@ -7,6 +7,7 @@ import DatabaseScreen from 'screens/Tests/Database';
 import GridScreen from 'screens/Tests/Grid';
 import ComponentsScreen from 'screens/Tests/Components';
 import FormScreen from 'screens/Tests/Form';
+import CamScannerScreen from 'screens/Tests/CamScanner';
 
 const Stack = createNativeStackNavigator<Navigation.ParamList>();
 const StackNavigator = Stack.Navigator;
@@ -23,6 +24,7 @@ export default function Navigation() {
         <StackScreen name="TESTS.GRID" component={GridScreen} />
         <StackScreen name="TESTS.COMPONENTS" component={ComponentsScreen} />
         <StackScreen name="TESTS.FORM" component={FormScreen} />
+        <StackScreen name="TESTS.CAM" component={CamScannerScreen} />
       </StackNavigator>
     </NavigationContainer>
   );

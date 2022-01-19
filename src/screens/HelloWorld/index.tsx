@@ -82,6 +82,7 @@ const HelloWorldScreen = (props: Props) => {
         <Button onPress={goTo('TESTS.GRID')} title="Grid" />
         <Button onPress={goTo('TESTS.COMPONENTS')} title="Components" />
         <Button onPress={goTo('TESTS.FORM')} title="Form" />
+        <Button onPress={goTo('TESTS.CAM')} title="CamScanner" />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,

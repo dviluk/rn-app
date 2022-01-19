@@ -67,10 +67,10 @@ export default function Screen(props: Props) {
         accessoryRight={renderRightActions}
       />
       <Divider />
-      <Layout>{children}</Layout>
+      <Layout style={{flex: 1}}>{children}</Layout>
     </SafeAreaView>
   );
 }
 
-const SuperIcon = (icon: string) => (props: IconProps) =>
+const SuperIcon = (icon: Eva.Icons) => (props: IconProps) =>
   <Icon {...props} name={icon} />;

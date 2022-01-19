@@ -5,5 +5,6 @@ declare namespace Navigation {
     'TESTS.GRID': undefined;
     'TESTS.COMPONENTS': undefined;
     'TESTS.FORM': undefined;
+    'TESTS.CAM': undefined;
   };
 }
